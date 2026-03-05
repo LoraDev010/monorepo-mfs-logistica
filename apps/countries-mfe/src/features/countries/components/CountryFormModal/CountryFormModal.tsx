@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { useCountriesStore } from '../store/countriesStore'
-import type { Country } from '../types'
+import { useCountriesStore } from '../../store/countriesStore'
+import type { Country } from '../../types'
 import styles from './CountryFormModal.module.scss'
 
 interface Props {

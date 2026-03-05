@@ -1,7 +1,7 @@
 import { ErrorBoundary } from 'react-error-boundary'
-import type { Country } from '../types'
-import CountryCard from './CountryCard'
-import { useCountriesStore } from '../store/countriesStore'
+import type { Country } from '../../types'
+import CountryCard from '../CountryCard'
+import { useCountriesStore } from '../../store/countriesStore'
 import styles from './CountryList.module.scss'
 
 interface Props {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useUsersStore } from '../store/usersStore'
+import { useUsersStore } from '../../store/usersStore'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import styles from './UserSearch.module.scss'
 

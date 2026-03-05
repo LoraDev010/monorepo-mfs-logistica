@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { useUsersStore } from '../store/usersStore'
-import type { User } from '../types'
+import { useUsersStore } from '../../store/usersStore'
+import type { User } from '../../types'
 import styles from './UserFormModal.module.scss'
 
 interface Props {

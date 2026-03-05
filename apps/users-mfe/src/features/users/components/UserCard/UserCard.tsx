@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
-import type { User } from '../types'
-import { useUsersStore } from '../store/usersStore'
+import type { User } from '../../types'
+import { useUsersStore } from '../../store/usersStore'
 import styles from './UserCard.module.scss'
 
 interface Props {

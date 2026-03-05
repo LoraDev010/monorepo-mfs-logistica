@@ -1,4 +1,4 @@
-import { useCountriesStore } from '../store/countriesStore'
+import { useCountriesStore } from '../../store/countriesStore'
 import styles from './CountrySearch.module.scss'
 
 export default function CountrySearch() {

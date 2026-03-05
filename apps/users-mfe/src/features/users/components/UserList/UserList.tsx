@@ -1,9 +1,9 @@
 import { ErrorBoundary } from 'react-error-boundary'
 import ErrorFallback from '@/shared/components/ErrorFallback'
-import { useUsers } from '../hooks/useUsers'
-import { useUsersStore } from '../store/usersStore'
-import UserCard from './UserCard'
-import type { User } from '../types'
+import { useUsers } from '../../hooks/useUsers'
+import { useUsersStore } from '../../store/usersStore'
+import UserCard from '../UserCard'
+import type { User } from '../../types'
 import styles from './UserList.module.scss'
 
 interface Props {

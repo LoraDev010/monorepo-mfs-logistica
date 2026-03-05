@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { useUsersStore } from '../store/usersStore'
+import { useUsersStore } from '../../store/usersStore'
 import styles from './Pagination.module.scss'
 
 interface Props {

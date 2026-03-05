@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'motion/react'
-import type { Country } from '../types'
+import type { Country } from '../../types'
 import styles from './CountryDetailView.module.scss'
 
 interface Props {

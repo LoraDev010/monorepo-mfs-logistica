@@ -1,4 +1,4 @@
-import { useCountriesStore } from '../store/countriesStore'
+import { useCountriesStore } from '../../store/countriesStore'
 import styles from './Pagination.module.scss'
 
 interface Props {

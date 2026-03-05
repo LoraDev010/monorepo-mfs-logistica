@@ -1,6 +1,6 @@
 import { motion } from 'motion/react'
-import { useCountriesStore } from '../store/countriesStore'
-import type { Country } from '../types'
+import { useCountriesStore } from '../../store/countriesStore'
+import type { Country } from '../../types'
 import styles from './CountryCard.module.scss'
 
 interface Props {
