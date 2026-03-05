@@ -41,23 +41,21 @@ export default function Layout({ children }: Props) {
 
   return (
     <div className="min-h-screen bg-bg font-body text-text-primary">
-      {/* ── Navbar ── */}
       <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 py-3 sm:py-0 sm:h-16 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0">
+          <Link to="/" className="flex items-center gap-2.5 min-w-0">
+            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-brand shrink-0">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                 <path d="M3 8.5L6.5 12L13 4" stroke="#FFD400" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
-            <span className="font-display font-bold text-xl tracking-tight text-brand">
-              Andres Lora S.A.S<span className="text-text-secondary font-normal text-sm ml-1.5">People</span>
+            <span className="min-w-0 font-display font-bold text-lg sm:text-xl tracking-tight text-brand truncate">
+              Andres Lora S.A.S
+              <span className="hidden sm:inline text-text-secondary font-normal text-sm ml-1.5">People</span>
             </span>
           </Link>
 
-          {/* Navigation tabs */}
-          <nav className="flex items-center gap-1">
+          <nav className="w-full sm:w-auto -mx-4 px-4 sm:mx-0 sm:px-0 flex items-center gap-1 overflow-x-auto overscroll-x-contain">
             {NAV_ITEMS.map((item) => {
               const active = isActive(item)
               return (
@@ -65,7 +63,7 @@ export default function Layout({ children }: Props) {
                   key={item.path}
                   onClick={() => navigate(item.path)}
                   className={[
-                    'flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold font-body transition-all',
+                    'flex shrink-0 items-center gap-1.5 px-3 sm:px-4 py-2 rounded-lg text-sm font-semibold font-body transition-all',
                     active
                       ? 'bg-brand text-white shadow-sm'
                       : 'text-brand hover:bg-brand-light',
@@ -95,3 +93,4 @@ export default function Layout({ children }: Props) {
     </div>
   )
 }
+
