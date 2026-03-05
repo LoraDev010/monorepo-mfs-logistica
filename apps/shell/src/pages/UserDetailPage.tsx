@@ -4,7 +4,7 @@ import LoadingScreen from '@/shared/components/LoadingScreen'
 import { useSelectedUserStore } from '@/stores/selectedUserStore'
 
 const UserDetail = lazy(() => 
-  import('usersMfe/UserDetail').then(m => ({ default: m.UserDetail }))
+  import('usersMfe/UsersFeature').then(m => ({ default: m.UserDetail }))
 )
 
 export default function UserDetailPage() {

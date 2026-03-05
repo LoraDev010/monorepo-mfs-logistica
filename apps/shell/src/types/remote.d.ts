@@ -18,20 +18,14 @@ declare module 'usersMfe/UsersFeature' {
     onUserSelect?: (user: User) => void
   }
 
-  const UsersFeature: ComponentType<UsersFeatureProps>
-  export default UsersFeature
-}
-
-declare module 'usersMfe/UserDetail' {
-  import type { ComponentType } from 'react'
-  import type { User } from 'usersMfe/UsersFeature'
-
   export interface UserDetailProps {
     user: User
     onBack?: () => void
   }
 
+  const UsersFeature: ComponentType<UsersFeatureProps>
   export const UserDetail: ComponentType<UserDetailProps>
+  export default UsersFeature
 }
 
 declare module 'countriesMfe/CountriesFeature' {
