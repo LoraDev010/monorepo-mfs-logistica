@@ -33,7 +33,7 @@ Cada micro frontend se compila y despliega de forma independiente. La shell los 
 ## Instalación
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/LoraDev010/monorepo-mfs-logistica
 cd mf-user-test
 npm install
 ```
