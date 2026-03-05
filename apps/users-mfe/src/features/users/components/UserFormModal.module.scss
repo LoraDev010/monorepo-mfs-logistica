@@ -1,0 +1,187 @@
+@use "@shared/styles/variables" as v;
+@use '../../../styles/mixins' as m;
+
+// ── Overlay ───────────────────────────────────────────────────────────────────
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+// ── Panel ─────────────────────────────────────────────────────────────────────
+.panel {
+  position: relative;
+  background: v.$surface;
+  border-radius: v.$radius-card;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 32rem;
+  overflow: hidden;
+}
+
+// ── Panel header ──────────────────────────────────────────────────────────────
+.panelHeader {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, v.$brand 0%, #2a1de8 100%);
+}
+
+.panelHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.panelIconWrap {
+  @include m.flex-center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.panelTitle {
+  font-family: v.$font-display;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.closeBtn {
+  @include m.flex-center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: v.$transition-base;
+  font-size: 1rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.accentBar {
+  height: 0.25rem;
+  background: v.$accent;
+}
+
+// ── Form ──────────────────────────────────────────────────────────────────────
+.form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+// ── Field ─────────────────────────────────────────────────────────────────────
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: v.$text-secondary;
+  font-family: v.$font-body;
+  margin-bottom: 0.375rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input {
+  @include m.input-base;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+
+.inputError {
+  @include m.input-base;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  border-color: v.$danger;
+
+  &:focus {
+    border-color: v.$danger;
+    box-shadow: 0 0 0 2px rgba(v.$danger, 0.2);
+  }
+}
+
+.errorMsg {
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$danger;
+  margin-top: 0.25rem;
+}
+
+// ── Actions ───────────────────────────────────────────────────────────────────
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+.btnCancel {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: v.$font-body;
+  color: v.$text-secondary;
+  border: 1px solid v.$border;
+  background: transparent;
+  cursor: pointer;
+  transition: v.$transition-base;
+
+  &:hover {
+    background: v.$surface-2;
+  }
+}
+
+.btnSubmit {
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: v.$font-body;
+  color: #fff;
+  border: none;
+  background: linear-gradient(135deg, v.$brand 0%, #2a1de8 100%);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  transition: v.$transition-base;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

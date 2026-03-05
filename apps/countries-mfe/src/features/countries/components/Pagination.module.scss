@@ -1,0 +1,78 @@
+@use "@shared/styles/variables" as v;
+@use '../../../styles/mixins' as m;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 1.5rem 0 0.5rem;
+}
+
+.summary {
+  font-size: 0.875rem;
+  color: v.$text-secondary;
+
+  strong {
+    color: v.$text-primary;
+    font-weight: 600;
+  }
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  @include m.flex-center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
+  font-family: v.$font-body;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: v.$radius-btn;
+  cursor: pointer;
+  transition: v.$transition-base;
+  border: 1.5px solid v.$border;
+  background: v.$surface;
+  color: v.$text-secondary;
+
+  &:hover:not(.active):not(.dots) {
+    border-color: v.$brand;
+    color: v.$brand;
+    background: v.$surface-2;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.active {
+  background: v.$brand;
+  border-color: v.$brand;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(v.$brand, 0.3);
+  cursor: default;
+}
+
+.dots {
+  border-color: transparent;
+  background: transparent;
+  cursor: default;
+  color: v.$text-secondary;
+}
+
+.accentBar {
+  width: 3rem;
+  height: 3px;
+  background: v.$accent;
+  border-radius: 99px;
+}

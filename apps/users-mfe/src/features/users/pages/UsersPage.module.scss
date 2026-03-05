@@ -1,0 +1,30 @@
+@use "@shared/styles/variables" as v;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchWrap {
+  flex: 1;
+}
+
+.syncing {
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$text-secondary;
+  flex-shrink: 0;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

@@ -1,0 +1,93 @@
+@use "@shared/styles/variables" as v;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.summary {
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$text-secondary;
+}
+
+.summaryHighlight {
+  color: v.$brand;
+  font-weight: 600;
+}
+
+.summaryTotal {
+  color: v.$text-primary;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.ellipsis {
+  color: v.$text-secondary;
+  padding: 0 0.25rem;
+  font-size: 0.875rem;
+}
+
+.pageBtn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-family: v.$font-display;
+  font-weight: 600;
+  border: 1px solid v.$border;
+  background: v.$surface;
+  color: v.$text-secondary;
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover {
+    border-color: v.$brand;
+    color: v.$brand;
+  }
+
+  &.active {
+    background: v.$brand;
+    color: #fff;
+    border-color: v.$brand;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+  }
+}
+
+.prevNextBtn {
+  padding: 0 0.75rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  font-family: v.$font-body;
+  color: v.$text-secondary;
+  border: 1px solid v.$border;
+  background: v.$surface;
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover:not(:disabled) {
+    border-color: v.$brand;
+    color: v.$brand;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+}
+
+.accent {
+  width: 4rem;
+  height: 0.125rem;
+  background: v.$accent;
+  border-radius: 9999px;
+}

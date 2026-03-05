@@ -1,0 +1,119 @@
+@use "@shared/styles/variables" as v;
+@use '../../../styles/mixins' as m;
+
+// ── Header card ───────────────────────────────────────────────────────────────
+.header {
+  background: v.$surface;
+  border-radius: v.$radius-card;
+  border: 1px solid v.$border;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.headerIcon {
+  @include m.flex-center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: rgba(v.$brand, 0.1);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-family: v.$font-display;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: v.$text-primary;
+  line-height: 1;
+}
+
+.headerCount {
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$brand;
+  margin-top: 0.125rem;
+}
+
+.btnNew {
+  @include m.btn-primary;
+  padding: 0.625rem 1.25rem;
+  font-family: v.$font-body;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+// ── Grid ──────────────────────────────────────────────────────────────────────
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+
+  @include m.sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include m.lg {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ── Skeleton cards ────────────────────────────────────────────────────────────
+.skeleton {
+  background: v.$surface;
+  border-radius: v.$radius-card;
+  height: 16rem;
+  border: 1px solid v.$border;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #e8eaf2 25%, #f4f5fa 50%, #e8eaf2 75%);
+    background-size: 800px 100%;
+    animation: skeleton-pulse 1.6s ease infinite;
+  }
+}
+
+@keyframes skeleton-pulse {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeletonBar {
+  height: 0.375rem;
+  background: rgba(v.$brand, 0.2);
+  border-radius: v.$radius-card v.$radius-card 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+// ── Empty state ───────────────────────────────────────────────────────────────
+.empty {
+  text-align: center;
+  padding: 7rem 0;
+}
+
+.emptyText {
+  font-family: v.$font-body;
+  font-size: 0.875rem;
+  color: v.$text-secondary;
+}
+
+.emptyHint {
+  font-family: v.$font-body;
+  font-size: 0.75rem;
+  color: v.$brand;
+  margin-top: 0.25rem;
+}

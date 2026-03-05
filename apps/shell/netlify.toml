@@ -1,0 +1,9 @@
+[build]
+  command = "npm ci && npm run build:shell"
+  publish = "apps/shell/dist"
+
+# SPA redirect: send all routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

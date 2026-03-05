@@ -1,0 +1,158 @@
+@use "@shared/styles/variables" as v;
+@use '../../../styles/mixins' as m;
+
+.overlay {
+  @include m.modal-overlay;
+}
+
+.panel {
+  position: relative;
+  background: v.$surface;
+  border-radius: v.$radius-card;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+  width: 100%;
+  max-width: 520px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.panelHeader {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, v.$brand 0%, #2a1de8 100%);
+}
+
+.panelHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.panelIconWrap {
+  @include m.flex-center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.panelTitle {
+  font-family: v.$font-display;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.closeBtn {
+  @include m.flex-center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: v.$transition-base;
+  font-size: 1rem;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.accentBar {
+  height: 0.25rem;
+  background: v.$accent;
+}
+
+.form {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.875rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: v.$text-secondary;
+}
+
+.input {
+  @include m.input-base;
+
+  &.error {
+    border-color: v.$danger;
+    box-shadow: 0 0 0 3px rgba(v.$danger, 0.1);
+  }
+}
+
+.select {
+  @include m.input-base;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a5e8a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  padding-right: 2.5rem;
+
+  &.error {
+    border-color: v.$danger;
+    box-shadow: 0 0 0 3px rgba(v.$danger, 0.1);
+  }
+}
+
+.errMsg {
+  font-size: 0.75rem;
+  color: v.$danger;
+  margin-top: 0.1rem;
+}
+
+.emojiPreview {
+  @include m.flex-center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  background: v.$surface-2;
+  border: 1.5px solid v.$border;
+  border-radius: v.$radius-input;
+  font-size: 1.25rem;
+  color: v.$text-secondary;
+  font-size: 0.875rem;
+
+  span:first-child {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+}
+
+.footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.btnCancel {
+  @include m.btn-ghost;
+  padding: 0.5rem 1.25rem;
+}
+
+.btnSave {
+  @include m.btn-primary;
+  padding: 0.5rem 1.5rem;
+}

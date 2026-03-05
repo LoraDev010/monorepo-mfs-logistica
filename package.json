@@ -1,0 +1,22 @@
+{
+  "name": "app-react",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:mfe": "npm run dev -w users-mfe",
+    "dev:countries": "npm run dev -w countries-mfe",
+    "dev:shell": "npm run dev -w shell",
+    "dev:all": "npm run dev -w users-mfe & npm run dev -w countries-mfe & npm run dev -w shell",
+    "build:mfe": "npm run build -w users-mfe",
+    "build:countries": "npm run build -w countries-mfe",
+    "build:shell": "npm run build -w shell",
+    "build": "npm run build:mfe && npm run build:countries && npm run build:shell",
+    "preview:mfe": "npm run preview -w users-mfe",
+    "preview:countries": "npm run preview -w countries-mfe",
+    "preview:shell": "npm run preview -w shell",
+    "test": "npm run test -w users-mfe",
+    "test:ci": "npm run test:ci -w users-mfe"
+  }
+}

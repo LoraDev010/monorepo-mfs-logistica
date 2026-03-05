@@ -1,0 +1,36 @@
+@use 'variables' as v;
+@use 'sass:color';
+@use 'reset';
+
+// ── CSS custom properties (bridges to shared/variables.css tokens) ────────────
+:root {
+  --bg:             #{v.$bg};
+  --surface:        #{v.$surface};
+  --surface-2:      #{v.$surface-2};
+  --border:         #{v.$border};
+  --text-primary:   #{v.$text-primary};
+  --text-secondary: #{v.$text-secondary};
+  --accent:         #{v.$accent};
+  --brand:          #{v.$brand};
+  --brand-dark:     #{v.$brand-dark};
+  --brand-light:    #{v.$brand-light};
+}
+
+// ── Base ──────────────────────────────────────────────────────────────────────
+body {
+  font-family: v.$font-body;
+  background-color: v.$bg;
+  color: v.$text-primary;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: v.$font-display;
+  line-height: 1.25;
+}
+
+// ── Scrollbar ─────────────────────────────────────────────────────────────────
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: v.$bg; }
+::-webkit-scrollbar-thumb { background: v.$border; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: color.adjust(v.$border, $lightness: -12%); }
